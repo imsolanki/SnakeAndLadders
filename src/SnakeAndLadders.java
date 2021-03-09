@@ -10,18 +10,18 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
     int location=1;
     public void showFrame(){
 
-        super.setPreferredSize(new Dimension(500, 520));
+        super.setPreferredSize(new Dimension(520, 600));
         super.setResizable(false);
         super.setVisible(true);
         ImageIcon imageIcon = new ImageIcon("C:\\Users\\Owner\\Desktop\\name.png"); // load the image to a imageIcon
         Image image = imageIcon.getImage(); // transform it
-        Image newimg = image.getScaledInstance(480, 450,  0); // scale it the smooth way
+        Image newimg = image.getScaledInstance(500, 500,  0); // scale it the smooth way
         imageIcon = new ImageIcon(newimg);
         label = new JLabel(imageIcon);
-        label.setBounds(0,0,480,450);
+        label.setBounds(0,0,500,500);
         super.add(label);
         btn = new JButton();
-        btn.setBounds(245,455,75,25);
+        btn.setBounds(245,510,75,25);
         super.add(btn);
         btn.addActionListener(this);
 
@@ -34,12 +34,33 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
     {
         super.paint(g);
         g.setColor(Color.BLACK);
+        int col=location;
+        int row=location;
         int x;
         int y;
         //----------------------------------------------------------------//
+        /*
+        * Location of the board==
+        * 100  99 98............
+        * ......
+        * 20 19 18......13 12 11
+        * 1  2  3  .....8  9  10
+        *
+        * ex
+        *
+        * */
+        row = row -1;
+        row = row /10;
+        row = 9-row;   //flipping the row
 
+        col = (col-1)%10;
+        if(row%2==0){
+            col=9-col;//flipping column
+        }
+        x=col*50+25;
+        y=row*50+35;
         //----------------------------------------------------------------//
-        g.fillOval(x,y,40,40);
+        g.fillOval(x,y,30,30);
     }
     public static void main(String[] args) {
         SnakeAndLadders s = new SnakeAndLadders();
