@@ -14,7 +14,7 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
         super.setResizable(false);
         super.setVisible(true);
         super.setTitle("Snake and Ladders!....");
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\Owner\\Desktop\\name.png"); // load the image to a imageIcon
+        ImageIcon imageIcon = new ImageIcon("src\\board.png"); // load the image to a imageIcon
         Image image = imageIcon.getImage(); // transform it
         Image newimg = image.getScaledInstance(500, 500,  0); // scale it the smooth way
         imageIcon = new ImageIcon(newimg);
