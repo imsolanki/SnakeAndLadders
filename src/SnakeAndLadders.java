@@ -83,8 +83,9 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
     }
 
     public void movements(int move){
-
+        int saveMove =move;
         location =location+move;
+
         this.repaint();
 
         if(location==3){
@@ -152,7 +153,8 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
             System.exit(0);
         }
         else if(location>100){
-            location = location;
+            location = location-saveMove;
+            this.repaint();
         }
 
 
