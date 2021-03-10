@@ -90,35 +90,35 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
 
         if(location==3){
             location=21;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==8){
             location=30;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==17){
             location=13;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==28){
             location=84;
-            this.repaint();
+            //this.repaint();
         }
         else if(location ==52){
             location=29;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==57){
             location=40;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==58){
             location=77;
-            this.repaint();
+           // this.repaint();
         }
         else if(location==62){
             location=22;
-            this.repaint();
+           //this.repaint();
         }
         else if(location==75) {
             location = 86;
@@ -126,37 +126,37 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
         }
         else if(location==80){
             location=100;
-            this.repaint();
+           // this.repaint();
             JOptionPane.showMessageDialog(this,"Hurray!!! Winnerrrr.....");
             //FileDialog fd =new FileDialog(this,"Hurray!!! Winnerrrr.....");
             this.setVisible(true);
             System.exit(0);
         }else if(location==88) {
             location = 18;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==90) {
             location = 91;
-            this.repaint();
+            //this.repaint();
         }else if(location==95) {
             location = 51;
-            this.repaint();
+            //this.repaint();
         }else if(location==97) {
             location = 79;
-            this.repaint();
+            //this.repaint();
         }
         else if(location==100) {
             this.repaint();
             JOptionPane.showMessageDialog(this,"Hurray!!! Winnerrrr.....");
             //FileDialog fd =new FileDialog(this,"Hurray!!! Winnerrrr.....");
-            this.setVisible(true);
+            //this.setVisible(true);
             System.exit(0);
         }
         else if(location>100){
             location = location-saveMove;
-            this.repaint();
+            //this.repaint();
         }
-
+        this.repaint();
 
     }
 
