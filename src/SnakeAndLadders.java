@@ -4,12 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class SnakeAndLadders extends  JFrame implements ActionListener{
+public class SnakeAndLadders extends  JFrame implements ActionListener {
+
     JButton btn;
     JLabel label;
     int location=1;
-    public void showFrame(){
 
+    public void showFrame(){
+        System.out.println(this);
         super.setPreferredSize(new Dimension(520, 600));
         super.setResizable(false);
         super.setVisible(true);
@@ -24,7 +26,7 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
         btn = new JButton();
         btn.setBounds(210,510,75,25);
         super.add(btn);
-        btn.addActionListener(this);
+        btn.addActionListener((ActionListener) this);
 
         super.setLayout(null);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,10 +65,6 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
         //----------------------------------------------------------------//
         g.fillOval(x,y,30,30);
     }
-    public static void main(String[] args) {
-        SnakeAndLadders s = new SnakeAndLadders();
-        s.showFrame();
-    }
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -76,91 +74,10 @@ public class SnakeAndLadders extends  JFrame implements ActionListener{
             //int x= (int) Math.floor(Math.random() * (7 - 1) + 1);
             Random r =new Random();
             int x = r.nextInt(6)+1;
-            movements(x);
+            Movements m =new Movements(this);
+            m.movements(x);
             btn.setText(String.valueOf(x));
         }
 
     }
-
-    public void movements(int move){
-        int saveMove =move;
-        location =location+move;
-
-        this.repaint();
-
-        if(location==3){
-            location=21;
-            //this.repaint();
-        }
-        else if(location==8){
-            location=30;
-            //this.repaint();
-        }
-        else if(location==17){
-            location=13;
-            //this.repaint();
-        }
-        else if(location==28){
-            location=84;
-            //this.repaint();
-        }
-        else if(location ==52){
-            location=29;
-            //this.repaint();
-        }
-        else if(location==57){
-            location=40;
-            //this.repaint();
-        }
-        else if(location==58){
-            location=77;
-           // this.repaint();
-        }
-        else if(location==62){
-            location=22;
-           //this.repaint();
-        }
-        else if(location==75) {
-            location = 86;
-            this.repaint();
-        }
-        else if(location==80){
-            location=100;
-           // this.repaint();
-            JOptionPane.showMessageDialog(this,"Hurray!!! Winnerrrr.....");
-            //FileDialog fd =new FileDialog(this,"Hurray!!! Winnerrrr.....");
-            this.setVisible(true);
-            System.exit(0);
-        }else if(location==88) {
-            location = 18;
-            //this.repaint();
-        }
-        else if(location==90) {
-            location = 91;
-            //this.repaint();
-        }else if(location==95) {
-            location = 51;
-            //this.repaint();
-        }else if(location==97) {
-            location = 79;
-            //this.repaint();
-        }
-        else if(location==100) {
-            this.repaint();
-            JOptionPane.showMessageDialog(this,"Hurray!!! Winnerrrr.....");
-            //FileDialog fd =new FileDialog(this,"Hurray!!! Winnerrrr.....");
-            //this.setVisible(true);
-            System.exit(0);
-        }
-        else if(location>100){
-            location = location-saveMove;
-            //this.repaint();
-        }
-        this.repaint();
-
-    }
-
-
-
-
 }
